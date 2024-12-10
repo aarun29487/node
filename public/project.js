@@ -49,3 +49,30 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
 });
 
+
+
+// Add event listeners to quantity buttons
+const decrementButton = document.querySelector('.quantity button:first-child');
+const incrementButton = document.querySelector('.quantity button:last-child');
+const quantityValue = document.querySelector('.quantity-value');
+
+decrementButton.addEventListener('click', () => {
+    let value = parseInt(quantityValue.textContent);
+    if (value > 1) {
+        value--;
+        quantityValue.textContent = value;
+    }
+});
+
+incrementButton.addEventListener('click', () => {
+    let value = parseInt(quantityValue.textContent);
+    value++;
+    quantityValue.textContent = value;
+});
+
+// Add event listener to "Add to Cart" button
+const addToCartButton = document.querySelector('.btn-primary');
+addToCartButton.addEventListener('click', () => {
+    // Implement your cart functionality here, e.g., add product to cart, update cart count, etc.
+    alert('Product added to cart!');
+});
